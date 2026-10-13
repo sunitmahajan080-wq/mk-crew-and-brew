@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MK Cue & Brew | Yavatmal</title>
+<meta name="description" content="Discover MK Cue & Brew in Yavatmal. Explore the venue, gallery and contact information.">
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --gold: #d5ad60;
+  --black: #090909;
+  --dark: #131313;
+  --white: #fff;
+  --muted: #b5b5b5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--black);
+  color: var(--white);
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1150px, 90%);
+  margin: auto;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(9,9,9,.96);
+  border-bottom: 1px solid #302718;
+}
+
+nav {
+  min-height: 82px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 25px;
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.logo small {
+  display: block;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 9px;
+  letter-spacing: 4px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.links {
+  display: flex;
+  gap: 25px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.links a:hover {
+  color: var(--gold);
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 23px;
+  background: var(--gold);
+  color: #111;
+  border: 1px solid var(--gold);
+  font-size: 12px;
+  font-weight: 800;
+  transition: .3s;
+}
+
+.btn:hover {
+  background: transparent;
+  color: var(--gold);
+}
+
+.hero {
+  min-height: 680px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.55)),
+    url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1800&q=85')
+    center/cover no-repeat;
+}
+
+.hero-content {
+  max-width: 700px;
+  padding: 100px 0;
+}
+
+.label {
+  color: var(--gold);
+  letter-spacing: 4px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+h1 {
+  font-size: clamp(48px, 8vw, 86px);
+  line-height: 1.06;
+  margin-bottom: 25px;
+}
+
+h1 span {
+  color: var(--gold);
+}
+
+.hero p {
+  max-width: 550px;
+  color: #ddd;
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 30px;
+}
+
+section {
+  padding: 95px 0;
+}
+
+.heading {
+  max-width: 680px;
+  margin: 0 auto 45px;
+  text-align: center;
+}
+
+.heading h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 18px;
+}
+
+.heading p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.gold-line {
+  width: 65px;
+  height: 2px;
+  background: var(--gold);
+  margin: 20px auto;
+}
+
+.features {
+  background: #111;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+.card {
+  border: 1px solid #382e1d;
+  background: #151515;
+  padding: 32px 27px;
+  transition: .3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: var(--gold);
+}
+
+.icon {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.card h3 {
+  color: var(--gold);
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+  border: 1px solid #44351c;
+}
+
+.about-text h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 22px;
+}
+
+.about-text p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+.gallery {
+  background: #111;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 270px;
+  object-fit: cover;
+  border: 1px solid #322818;
+  transition: .4s;
+}
+
+.gallery-grid img:hover {
+  border-color: var(--gold);
+  transform: scale(1.02);
+}
+
+.location-box {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.contact-card {
+  padding: 35px;
+  background: #151515;
+  border: 1px solid #382e1d;
+}
+
+.contact-card h3 {
+  color: var(--gold);
+  font-size: 29px;
+  margin-bottom: 25px;
+}
+
+.contact-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 2;
+  margin-bottom: 18px;
+}
+
+.contact-card strong {
+  color: white;
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 320px;
+  border: 0;
+  filter: grayscale(100%);
+}
+
+.cta {
+  background: #17130c;
+  text-align: center;
+  border-top: 1px solid #3b2d18;
+  border-bottom: 1px solid #3b2d18;
+}
+
+.cta h2 {
+  font-size: clamp(32px, 5vw, 48px);
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+footer {
+  padding: 35px 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 2;
+}
+
+footer strong {
+  color: var(--gold);
+}
+
+@media(max-width: 750px) {
+  nav {
+    min-height: 72px;
+  }
+
+  .links {
+    gap: 12px;
+  }
+
+  .links a {
+    font-size: 10px;
+  }
+
+  .nav-contact {
+    display: none;
+  }
+
+  .hero {
+    min-height: 570px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-grid,
+  .location-box {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image img {
+    height: 300px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .gallery-grid img {
+    height: 175px;
+  }
+
+  section {
+    padding: 70px 0;
+  }
+}
+
+@media(max-width: 380px) {
+  .logo {
+    font-size: 19px;
+  }
+
+  .links {
+    gap: 8px;
+  }
+
+  .links a {
+    font-size: 9px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <nav class="container">
+
+    <a class="logo" href="#home">
+      MK CUE & BREW
+      <small>YAVATMAL</small>
+    </a>
+
+    <div class="links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <a class="btn nav-contact" href="#contact">Get In Touch</a>
+
+  </nav>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+
+    <div class="label">A Signature Destination · Yavatmal</div>
+
+    <h1>
+      Where Style<br>
+      Meets <span>Experience.</span>
+    </h1>
+
+    <p>
+      Discover MK Cue & Brew — a stylish destination
+      with a premium atmosphere. Explore the venue,
+      discover its spaces and get in touch with the team.
+    </p>
+
+    <a class="btn" href="#about">DISCOVER THE VENUE ↗</a>
+
+  </div>
+</section>
+
+<section class="features" id="about">
+  <div class="container">
+
+    <div class="heading">
+      <div class="label">The MK Experience</div>
+      <h2>Designed For Your Moments</h2>
+      <div class="gold-line"></div>
+      <p>
+        Explore the venue and its atmosphere.
+        Contact the team for confirmed services,
+        availability and details.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <article class="card">
+        <div class="icon">♧</div>
+        <h3>Cue Sports</h3>
+        <p>
+          Discover the cue-sports experience
+          and ask the team about tables,
+          availability and membership.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="icon">✦</div>
+        <h3>Premium Ambience</h3>
+        <p>
+          Explore the venue's atmosphere
+          and discover the spaces available
+          for guests.
+        </p>
+      </article>
+
+      <article class="card">
+        <div class="icon">◈</div>
+        <h3>Get In Touch</h3>
+        <p>
+          Contact the team directly for
+          current services, timings and
+          venue information.
+        </p>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container about-grid">
+
+    <div class="about-image">
+      <img
+        src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1000&q=85"
+        alt="Stylish hospitality interior"
+        loading="lazy">
+    </div>
+
+    <div class="about-text">
+      <div class="label">About The Venue</div>
+      <h2>A Distinctive Space In Yavatmal</h2>
+
+      <p>
+        MK Cue & Brew is listed as a sports club
+        in Yavatmal. Contact the venue to confirm
+        its current operations and available facilities.
+      </p>
+
+      <p>
+        This website concept presents the venue
+        with a sophisticated black-and-gold visual
+        identity.
+      </p>
+
+      <a class="btn" href="#contact">CONTACT THE TEAM</a>
+    </div>
+
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+
+    <div class="heading">
+      <div class="label">Visual Collection</div>
+      <h2>Venue Gallery</h2>
+      <div class="gold-line"></div>
+      <p>
+        Hospitality and interior photos for this
+        design concept. Replace these with approved
+        MK Cue & Brew venue photographs.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <img
+        src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=800&q=80"
+        alt="Hospitality interior photo 1"
+        loading="lazy">
+
+      <img
+        src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80"
+        alt="Restaurant interior photo 2"
+        loading="lazy">
+
+      <img
+        src="https://images.unsplash.com/photo-1515003197210-e0cd7184f8b5?auto=format&fit=crop&w=800&q=80"
+        alt="Dining space photo 3"
+        loading="lazy">
+
+      <img
+        src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80"
+        alt="Dining ambience photo 4"
+        loading="lazy">
+
+      <img
+        src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80"
+        alt="Hospitality setting photo 5"
+        loading="lazy">
+
+      <img
+        src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+        alt="Venue atmosphere photo 6"
+        loading="lazy">
+
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <div class="label">Connect With MK Cue & Brew</div>
+    <h2>Let's Get In Touch</h2>
+    <p>
+      Need venue information? Contact the team
+      for details about facilities and availability.
+    </p>
+    <a class="btn" href="tel:+918767233604">
+      CALL THE VENUE
+    </a>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+
+    <div class="heading">
+      <div class="label">Visit & Connect</div>
+      <h2>Contact Information</h2>
+      <div class="gold-line"></div>
+      <p>Find the venue in Yavatmal and get in touch.</p>
+    </div>
+
+    <div class="location-box">
+
+      <div class="contact-card">
+        <h3>MK Cue & Brew</h3>
+
+        <p>
+          <strong>Location</strong><br>
+          Bangar Nagar, Yavatmal, Maharashtra
+        </p>
+
+        <p>
+          <strong>Phone</strong><br>
+          <a href="tel:+918767233604">+91 87672 33604</a>
+        </p>
+
+        <p>
+          <strong>Venue category</strong><br>
+          Cue Sports / Sports Club
+        </p>
+
+        <a
+          class="btn"
+          href="https://www.google.com/maps/search/?api=1&query=MK%20Cue%20and%20Brew%20Yavatmal"
+          target="_blank"
+          rel="noopener">
+          OPEN GOOGLE MAPS ↗
+        </a>
+      </div>
+
+      <div class="map">
+        <iframe
+          title="MK Cue and Brew Yavatmal map"
+          src="https://maps.google.com/maps?q=MK%20Cue%20and%20Brew%20Yavatmal&t=&z=14&output=embed"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>MK CUE & BREW · YAVATMAL</strong><br>
+    Premium Black & Gold Website Concept<br>
+    Website concept designed by Sunit Mahajan.<br>
+    © <span id="year"></span>
+  </div>
+</footer>
+
+<script>
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+  </html>
